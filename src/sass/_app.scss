@@ -3,6 +3,7 @@
   min-width: 320px;
   min-height: 100vh;
   padding: 20px;
+  position: relative;
   background: linear-gradient(-45deg, #D4BADD, #97DEE4);
   @extend %flex-column-center;
   .app__header {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { observable } from 'mobx';
+//import { observable } from 'mobx';
 
 import { Store } from '../store/Store';
 const classNames = require('classnames');
@@ -12,25 +12,20 @@ interface FormProps {
 @inject('store')
 @observer
 class Form extends Component<FormProps>  {
-  @observable name:string = ''
-  @observable surname:string = ''
 
   handleFirstname = ({ currentTarget: { value } }: React.SyntheticEvent<HTMLInputElement>) => {
-      this.name = value
-      this.props.store.changeFirstname(this.name)
+      this.props.store.changeFirstname(value)
     }
 
   handleLastname = ({ currentTarget: { value } }: React.SyntheticEvent<HTMLInputElement>) => {
-    this.surname = value
-    this.props.store.changeLastname(this.surname)
+    this.props.store.changeLastname(value)
   }
 
   handleSayHiButton = () => {
     if (!this.props.store.isOpenModal
       && this.props.store.firstName 
       && this.props.store.lastName) {
-      this.props.store.toggleModal();
-      console.log('open');
+      this.props.store.enableModal();
     }
   }
 
@@ -43,12 +38,13 @@ class Form extends Component<FormProps>  {
       <form
         className={"app-form"}
         onSubmit={this.handleFormSubmit}
+
       >
         <div className={"app-form__input-container"}>
           <input
             type="text"
             placeholder="Firstname"
-            value={this.name}
+            value={this.props.store.firstName}
             onChange={this.handleFirstname}
             className={classNames("input", "app-form__input")}
             autoFocus={true}
@@ -57,7 +53,7 @@ class Form extends Component<FormProps>  {
           <input
             type="text"
             placeholder="Lastname"
-            value={this.surname}
+            value={this.props.store.lastName}
             onChange={this.handleLastname}
             className={classNames("input", "app-form__input")}
             required

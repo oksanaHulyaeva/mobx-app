@@ -26,8 +26,11 @@ export class Store {
     this.lastName = value;
   }
 
-  @action toggleModal () {
-    this.isOpenModal = !this.isOpenModal;
+  @action enableModal () {
+    this.isOpenModal = true;
+  }
+  @action disableModal () {
+    this.isOpenModal = false;
   }
 }
 

@@ -17,19 +17,4 @@
       }
     }
   }
-  .app-form__button {
-    margin-top: 3rem;
-    width: 100%;
-    max-width: 400px;
-    height: 50px;
-    font-size: 2rem;
-    color: #fff;
-    background: $font-color;
-    border-radius: 2px;
-    text-transform: uppercase;
-    &:hover {
-      color: #D4BADD;
-      background: #14171a;
-    }
-  }
 }
