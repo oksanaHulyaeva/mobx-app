@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
-export class App extends Component  {
+import { Provider } from 'mobx-react';
+import * as serviceWorker from './serviceWorker';
+
+import { Store } from './store/Store';
+import Form from './components/Form';
+
+class App extends Component  {
+  store = new Store()
   render() {
     return (
-      <div className={"app"}>
-        <h1>Introduce yourself, please :)</h1>
-      </div>
+      <Provider store={this.store}>
+        <div className={"app"}>
+          <h1>Introduce yourself, please :)</h1>
+          <Form />
+        </div>
+      </Provider>
     )
   }
 }
+
+export default App;
+
+serviceWorker.unregister();

@@ -8,7 +8,7 @@ export interface IStore {
   changeLastname: () => void
 }
 
-class Store {
+export class Store {
   @observable firstName = 'John';
   @observable lastName = 'Smith';
 
