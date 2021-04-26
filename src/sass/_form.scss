@@ -1,0 +1,35 @@
+.app-form {
+  margin-top: 50px;
+  .app-form__input-container {
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    .app-form__input {
+      width: 48%;
+      max-width: 180px;
+      height: 50px;
+      padding: 10px;
+      font-size: 2rem;
+      background: $transparent;
+      border-radius: 2px;
+      &:hover {
+        background: $transparent-hover;
+      }
+    }
+  }
+  .app-form__button {
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 400px;
+    height: 50px;
+    font-size: 2rem;
+    color: #fff;
+    background: $font-color;
+    border-radius: 2px;
+    text-transform: uppercase;
+    &:hover {
+      color: #D4BADD;
+      background: #14171a;
+    }
+  }
+}

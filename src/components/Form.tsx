@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-
 import { observer, inject } from 'mobx-react';
 import { observable } from 'mobx';
 
 import { Store } from '../store/Store';
+const classNames = require('classnames');
 
 interface FormProps {
   store?: Store
@@ -41,27 +41,32 @@ class Form extends Component<FormProps>  {
   render() {
     return (
       <form
-        className={"app__form"}
+        className={"app-form"}
         onSubmit={this.handleFormSubmit}
       >
-        <h2>{this.props.store.fullName}</h2>
-        <input
-          type="text"
-          placeholder="Your firstname"
-          value={this.name}
-          onChange={this.handleFirstname}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Your lastname"
-          value={this.surname}
-          onChange={this.handleLastname}
-          required
-        />
+        <div className={"app-form__input-container"}>
+          <input
+            type="text"
+            placeholder="Firstname"
+            value={this.name}
+            onChange={this.handleFirstname}
+            className={classNames("input", "app-form__input")}
+            autoFocus={true}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Lastname"
+            value={this.surname}
+            onChange={this.handleLastname}
+            className={classNames("input", "app-form__input")}
+            required
+          />
+        </div>
         <button
           type="submit"
           onClick={this.handleSayHiButton}
+          className={classNames("button", "app-form__button")}
           >
             Say Hi
         </button>

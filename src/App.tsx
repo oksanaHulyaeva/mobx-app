@@ -12,7 +12,7 @@ class App extends Component  {
     return (
       <Provider store={this.store}>
         <div className={"app"}>
-          <h1>Introduce yourself, please :)</h1>
+          <h1 className={"app__header"}>Introduce yourself, please :)</h1>
           <Form />
           <Modal />
         </div>

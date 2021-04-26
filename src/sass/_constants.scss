@@ -1,1 +1,33 @@
-$font-color: red;
+//CONSTANTS
+$bg-color: #313940;
+$font-color: #3F4156;
+$transparent: rgba(0, 0, 0, .2);
+$transparent-hover: rgba(0, 0, 0, .3);
+
+//PLACEHOLDERS
+
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+%transition {
+  transition: all .3s ease-out;
+}
+
+//MIXINS
+
+@mixin media-mobile-sm {
+  @media (min-width: 320px) { @content; }
+}
+@mixin media-mobile-lg {
+  @media (min-width: 640px) { @content; }
+}
+@mixin media-tablet {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin media-desktop {
+  @media (min-width: 1920) { @content; }
+}

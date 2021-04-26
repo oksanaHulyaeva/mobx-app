@@ -1,0 +1,7 @@
+.button,
+.input {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  @extend %transition;
+}
