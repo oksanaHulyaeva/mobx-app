@@ -11,6 +11,11 @@ interface ModalProps {
 @inject('store')
 @observer
 class Modal extends Component<ModalProps>  {
+
+  // handleKeyPress = (event:React.KeyboardEvent) => {
+  //   if(event.key === 'Enter') this.handleCloseButton();
+  //   console.log('enter');
+  // }
   
   handleCloseButton = () => {
     if (this.props.store.isOpenModal) {
@@ -28,7 +33,9 @@ class Modal extends Component<ModalProps>  {
         <div className={"app-modal__content"}>
           <h2 className={"app-modal__header"}>{ `Hello, ${this.props.store.fullName}!`}</h2>
           <button
+            type="submit"
             onClick={this.handleCloseButton}
+            onTouchEnd={this.handleCloseButton}
             className={classNames("button", "app-modal__button")}
           >
             Close

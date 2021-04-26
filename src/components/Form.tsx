@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-//import { observable } from 'mobx';
 
 import { Store } from '../store/Store';
 const classNames = require('classnames');
@@ -38,7 +37,6 @@ class Form extends Component<FormProps>  {
       <form
         className={"app-form"}
         onSubmit={this.handleFormSubmit}
-
       >
         <div className={"app-form__input-container"}>
           <input
@@ -62,6 +60,7 @@ class Form extends Component<FormProps>  {
         <button
           type="submit"
           onClick={this.handleSayHiButton}
+          onTouchEnd={this.handleSayHiButton}
           className={classNames("button", "app-form__button")}
           >
             Say Hi
