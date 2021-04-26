@@ -24,12 +24,21 @@ class Form extends Component<FormProps>  {
     this.surname = value
     this.props.store.changeLastname(this.surname)
   }
+
+  handleSayHiButton = () => {
+    if (!this.props.store.isOpenModal) {
+      this.props.store.toggleModal();
+      console.log('open');
+    }
+  }
+
   render() {
     return (
       <div className={"app"}>
         <h2>{this.props.store.fullName}</h2>
         <input type="text" value={this.name} onChange={this.handleFirstname}/>
         <input type="text" value={this.surname} onChange={this.handleLastname}/>
+        <button onClick={this.handleSayHiButton}>Say Hi</button>
       </div>
     )
   }

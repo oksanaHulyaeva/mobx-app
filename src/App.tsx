@@ -4,6 +4,7 @@ import * as serviceWorker from './serviceWorker';
 
 import { Store } from './store/Store';
 import Form from './components/Form';
+import Modal from './components/Modal'
 
 class App extends Component  {
   store = new Store()
@@ -13,6 +14,7 @@ class App extends Component  {
         <div className={"app"}>
           <h1>Introduce yourself, please :)</h1>
           <Form />
+          <Modal />
         </div>
       </Provider>
     )
