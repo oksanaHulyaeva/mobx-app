@@ -20,7 +20,7 @@ class Modal extends Component<ModalProps>  {
 
   render() {
     return (
-      <div className={"app"}>
+      <div className={"app__modal"}>
         <h2>{ `Hello, ${this.props.store.fullName}!`}</h2>
         <button onClick={this.handleCloseButton}>Close</button>
 

@@ -10,8 +10,8 @@ export interface IStore {
 }
 
 export class Store {
-  @observable firstName = 'John';
-  @observable lastName = 'Smith';
+  @observable firstName = '';
+  @observable lastName = '';
   @observable isOpenModal = false;
 
   @computed get fullName() {

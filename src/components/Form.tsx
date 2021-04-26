@@ -26,20 +26,46 @@ class Form extends Component<FormProps>  {
   }
 
   handleSayHiButton = () => {
-    if (!this.props.store.isOpenModal) {
+    if (!this.props.store.isOpenModal
+      && this.props.store.firstName 
+      && this.props.store.lastName) {
       this.props.store.toggleModal();
       console.log('open');
     }
   }
 
+  handleFormSubmit = (event:React.FormEvent) => {
+    event.preventDefault();
+  }
+
   render() {
     return (
-      <div className={"app"}>
+      <form
+        className={"app__form"}
+        onSubmit={this.handleFormSubmit}
+      >
         <h2>{this.props.store.fullName}</h2>
-        <input type="text" value={this.name} onChange={this.handleFirstname}/>
-        <input type="text" value={this.surname} onChange={this.handleLastname}/>
-        <button onClick={this.handleSayHiButton}>Say Hi</button>
-      </div>
+        <input
+          type="text"
+          placeholder="Your firstname"
+          value={this.name}
+          onChange={this.handleFirstname}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Your lastname"
+          value={this.surname}
+          onChange={this.handleLastname}
+          required
+        />
+        <button
+          type="submit"
+          onClick={this.handleSayHiButton}
+          >
+            Say Hi
+        </button>
+      </form>
     )
   }
 }
